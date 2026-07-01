@@ -2,6 +2,11 @@
 
 A cloud-native banking application demonstrating secure transaction processing using AWS Serverless services.
 
+
+## Dashboard
+
+![Architecture](screenshots/Architecture.png)
+
 ---
 
 # Architecture
