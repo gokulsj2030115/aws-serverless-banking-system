@@ -3,7 +3,7 @@
 A cloud-native banking application demonstrating secure transaction processing using AWS Serverless services.
 
 
-## Architecture
+## Architecture Diagram
 
 ![Architecture](screenshots/Architecture.png)
 
@@ -11,31 +11,8 @@ A cloud-native banking application demonstrating secure transaction processing u
 
 # Architecture
 
-API Gateway
+API Gateway -> AWS Lambda -> Amazon RDS PostgreSQL -> Amazon SQS -> Transaction Processor Lambda -> Amazon SNS -> Email Notification 
 
-↓
-
-AWS Lambda
-
-↓
-
-Amazon RDS PostgreSQL
-
-↓
-
-Amazon SQS
-
-↓
-
-Transaction Processor Lambda
-
-↓
-
-Amazon SNS
-
-↓
-
-Email Notification
 
 ---
 
