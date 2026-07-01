@@ -1,90 +1,168 @@
 # AWS Serverless Banking System
 
-A cloud-native banking application demonstrating secure transaction processing using AWS serverless services.
+A cloud-native banking application demonstrating secure transaction processing using AWS Serverless services.
 
-## Architecture
+---
+
+# Architecture
 
 API Gateway
+
 ↓
+
 AWS Lambda
+
 ↓
+
 Amazon RDS PostgreSQL
+
 ↓
+
 Amazon SQS
+
 ↓
+
 Transaction Processor Lambda
+
 ↓
+
 Amazon SNS
+
 ↓
+
 Email Notification
 
-## Features
+---
 
-- Create Account
-- View Accounts
-- Deposit Money
-- Withdraw Money
-- Transfer Money
-- Event-driven Processing
-- Email Notifications
-- Analytics Dashboard
-- Transaction History
+# Features
 
-## AWS Services
+✅ Create Account
 
-- API Gateway
+✅ Deposit Money
+
+✅ Withdraw Money
+
+✅ Transfer Money
+
+✅ Transaction History
+
+✅ Dashboard Analytics
+
+✅ Event-Driven Processing
+
+✅ Email Notifications
+
+---
+
+# AWS Services
+
+- Amazon API Gateway
 - AWS Lambda
 - Amazon RDS PostgreSQL
 - Amazon SQS
 - Amazon SNS
-- Secrets Manager
-- CloudWatch
+- AWS Secrets Manager
+- Amazon S3
 - IAM
+- Amazon CloudWatch
 
-## Tech Stack
+---
+
+# Tech Stack
 
 - HTML
 - CSS
 - JavaScript
 - PostgreSQL
+- AWS
 
-## Architecture Diagram
+---
 
-(Add architecture image here)
+# Screenshots
 
-## Screenshots
+## Dashboard
 
-(Add dashboard screenshots here)
+![Dashboard](screenshots/Dashboard.png)
 
-## API Endpoints
+---
 
-GET /accounts
+## Deposit
 
-POST /accounts
+![Deposit](screenshots/Deposit.png)
 
-PUT /accounts/{id}/deposit
+---
 
-PUT /accounts/{id}/withdraw
+## Transfer
 
-POST /transfer
+![Transfer](screenshots/Transfer.png)
 
-GET /transactions/{id}
+---
 
-## Deployment
+## Transaction History
 
-1. Create RDS PostgreSQL
-2. Store credentials in Secrets Manager
-3. Deploy Lambda functions
-4. Configure API Gateway
-5. Create SQS Queue
-6. Create SNS Topic
-7. Host frontend on Amazon S3
+![Transactions](screenshots/Transaction.png)
 
-## Future Improvements
+---
+
+## SNS Email Notification
+
+![Email](screenshots/email.png)
+
+---
+
+## Lambda
+
+![Lambda](screenshots/Lambda.png)
+
+---
+
+## Amazon SQS
+
+![SQS](screenshots/SQS.png)
+
+---
+
+## Amazon SNS
+
+![SNS](screenshots/SNS.png)
+
+---
+
+## Amazon S3 Website Hosting
+
+![S3](screenshots/s3.png)
+
+---
+
+# API Endpoints
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /accounts |
+| POST | /accounts |
+| PUT | /accounts/{id}/deposit |
+| PUT | /accounts/{id}/withdraw |
+| POST | /transfer |
+| GET | /transactions/{id} |
+| DELETE | /accounts/{id} |
+
+---
+
+# Future Improvements
 
 - AWS Step Functions
-- Amazon Cognito Authentication
-- Terraform IaC
-- CloudFront + Route 53
-- CI/CD with GitHub Actions
-- Unit & Integration Tests
+- Amazon Cognito
+- Terraform
+- CloudFront
+- Route53
+- GitHub Actions CI/CD
+- Docker
+- Kubernetes
+
+---
+
+# Author
+
+**Gokul S**
+
+AWS Certified Solutions Architect – Associate
