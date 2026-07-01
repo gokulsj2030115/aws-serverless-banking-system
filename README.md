@@ -82,7 +82,7 @@ Email Notification
 
 ## Dashboard
 
-![Dashboard](screenshots/Dashboard.png)
+![Dashboard](screenshots/Dashbaord.png)
 
 ---
 
