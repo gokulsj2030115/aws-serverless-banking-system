@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - AWS Banking Console</title>
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- App Wrapper -->
+  <div class="app-container">
+    
+    <!-- Sidebar Layout -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <i class="fas fa-cubes text-info fs-3"></i>
+        <span class="sidebar-brand-name">AWS BANK</span>
+      </div>
+      
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="index.html" class="sidebar-link">
+            <i class="fas fa-th-large"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="accounts.html" class="sidebar-link">
+            <i class="fas fa-wallet"></i>
+            <span>Accounts</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="create-account.html" class="sidebar-link">
+            <i class="fas fa-user-plus"></i>
+            <span>Create Account</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="deposit.html" class="sidebar-link">
+            <i class="fas fa-arrow-alt-circle-down"></i>
+            <span>Deposit Funds</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="withdraw.html" class="sidebar-link">
+            <i class="fas fa-arrow-alt-circle-up"></i>
+            <span>Withdraw Funds</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="transfer.html" class="sidebar-link">
+            <i class="fas fa-exchange-alt"></i>
+            <span>Transfer Money</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="transactions.html" class="sidebar-link">
+            <i class="fas fa-history"></i>
+            <span>Transactions</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="analytics.html" class="sidebar-link">
+            <i class="fas fa-chart-line"></i>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="settings.html" class="sidebar-link">
+            <i class="fas fa-sliders-h"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+      
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center gap-2 text-white-50 fs-7">
+          <i class="fas fa-shield-alt text-info"></i>
+          <span>Secure Console v1.0.0</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top Navbar -->
+      <nav class="top-navbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="sidebar-toggler" id="sidebarToggler" aria-label="Toggle Sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="h3 m-0 fw-bold">Console Settings</h1>
+        </div>
+        
+        <div class="d-flex align-items-center gap-3">
+          <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Theme">
+            <i class="fas fa-moon text-primary"></i>
+          </button>
+          <div class="dropdown">
+            <a class="d-flex align-items-center gap-2 text-decoration-none dropdown-toggle text-reset" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 38px; height: 38px; font-size: 0.9rem;">
+                AD
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end glass-card border-0 shadow-lg">
+              <li><span class="dropdown-item-text fw-semibold text-primary">Admin Console</span></li>
+              <li><hr class="dropdown-divider border-secondary-subtle"></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2 text-secondary"></i>Settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Settings Layout -->
+      <div class="row g-4">
+        <!-- Configuration Card -->
+        <div class="col-lg-6 col-12">
+          <div class="card glass-card p-4 p-md-5 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center gap-2 pb-2 border-bottom border-secondary-subtle">
+              <i class="fas fa-network-wired text-primary"></i>
+              <span>API Gateway Configuration</span>
+            </h5>
+            
+            <form id="apiSettingsForm">
+              <div class="mb-3">
+                <label for="apiEndpointInput" class="form-label fw-semibold">AWS REST API Endpoint URL</label>
+                <input type="url" id="apiEndpointInput" class="form-control" placeholder="https://YOUR_API_GATEWAY_URL/dev" required>
+                <div class="form-text mt-2 text-secondary">
+                  Specify the base deployment URL of your AWS API Gateway Stage endpoint.
+                </div>
+              </div>
+              
+              <div class="d-flex gap-2 mt-4">
+                <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 border-0 shadow">Save Changes</button>
+                <button type="button" id="resetApiBtn" class="btn btn-outline-secondary rounded-pill px-4">Reset Default</button>
+              </div>
+            </form>
+            
+            <h5 class="fw-bold mt-5 mb-4 d-flex align-items-center gap-2 pb-2 border-bottom border-secondary-subtle">
+              <i class="fas fa-adjust text-primary"></i>
+              <span>Appearance Themes</span>
+            </h5>
+            <div class="d-flex align-items-center justify-content-between p-3 bg-body-tertiary rounded-3">
+              <div>
+                <strong class="d-block mb-1">Dark Mode UI</strong>
+                <span class="text-secondary fs-7">Switch between light and dark themes.</span>
+              </div>
+              <div class="form-check form-switch fs-4">
+                <input class="form-check-input" type="checkbox" role="switch" id="themeSwitchControl" style="cursor: pointer;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Project Guide -->
+        <div class="col-lg-6 col-12">
+          <div class="card glass-card p-4 p-md-5 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center gap-2 pb-2 border-bottom border-secondary-subtle">
+              <i class="fas fa-info-circle text-primary"></i>
+              <span>About Banking Portal</span>
+            </h5>
+            
+            <div class="about-section">
+              <h6 class="fw-semibold text-primary mb-2">Cloud-Native Serverless Design</h6>
+              <p class="text-secondary fs-7 mb-4">
+                This client banking application is designed as a secure static web panel, suitable for direct hosting inside an <strong>Amazon S3 Static Website Bucket</strong> and distribution via <strong>Amazon CloudFront</strong>. All logic is computed inside the browser utilizing modern asynchronous <code>fetch()</code> requests.
+              </p>
+              
+              <h6 class="fw-semibold text-primary mb-2">Architecture Schema</h6>
+              <div class="p-3 bg-body-tertiary rounded-3 mb-4 text-center fs-8 text-secondary border border-secondary-subtle">
+                <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                  <span class="badge bg-dark-subtle text-dark-emphasis">S3 Static Web</span>
+                  <i class="fas fa-arrow-right"></i>
+                  <span class="badge bg-primary text-white">API Gateway REST</span>
+                  <i class="fas fa-arrow-right"></i>
+                  <span class="badge bg-warning text-dark">AWS Lambda</span>
+                </div>
+                <div class="text-center text-info-emphasis fw-bold">
+                  Data Layer: Amazon DynamoDB
+                </div>
+              </div>
+              
+              <h6 class="fw-semibold text-primary mb-2">Deployment Instructions</h6>
+              <ol class="fs-7 text-secondary ps-3 mb-0">
+                <li class="mb-2">Create a REST API in <strong>Amazon API Gateway</strong>.</li>
+                <li class="mb-2">Create backing <strong>AWS Lambda</strong> functions to process:
+                  <ul class="ps-3 mt-1">
+                    <li><code>GET /accounts</code>, <code>POST /accounts</code></li>
+                    <li><code>POST /accounts/{id}/deposit</code>, <code>POST /accounts/{id}/withdraw</code></li>
+                    <li><code>POST /transfer</code>, <code>GET /transactions</code></li>
+                  </ul>
+                </li>
+                <li class="mb-2">Deploy your API Gateway stage, copy the Stage Invoke URL, and paste it into the endpoint settings form.</li>
+                <li>Configure CORS policies on API Gateway to accept origin headers from your hosted domain or local environment.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-auto pt-5 pb-3 text-center border-top border-secondary-subtle">
+        <p class="text-secondary mb-0 fs-7">&copy; 2026 AWS Banking Portal. All rights reserved. Powered by API Gateway & Lambda.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core JS -->
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- Page specific settings logic script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("apiSettingsForm");
+      const input = document.getElementById("apiEndpointInput");
+      const resetBtn = document.getElementById("resetApiBtn");
+      
+      // Theme Switch Control in Settings Page
+      const themeSwitch = document.getElementById("themeSwitchControl");
+      if (themeSwitch) {
+        const activeTheme = document.documentElement.getAttribute("data-bs-theme");
+        themeSwitch.checked = (activeTheme === "dark");
+        
+        themeSwitch.addEventListener("change", () => {
+          const themeBtn = document.getElementById("themeToggleBtn");
+          if (themeBtn) themeBtn.click(); // Trigger default header theme button action
+        });
+        
+        // Watch theme toggler changes to sync switch check state
+        const observer = new MutationObserver(() => {
+          const updatedTheme = document.documentElement.getAttribute("data-bs-theme");
+          themeSwitch.checked = (updatedTheme === "dark");
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-bs-theme"] });
+      }
+      
+      // Load current URL configuration
+      if (window.ApiClient) {
+        input.value = window.ApiClient.getBaseUrl();
+      }
+      
+      // Handle form save
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const value = input.value.trim();
+        if (window.ApiClient) {
+          window.ApiClient.setBaseUrl(value);
+          if (typeof window.showToast === 'function') {
+            window.showToast("AWS API Gateway endpoint updated successfully!", "success");
+          } else {
+            alert("API Endpoint saved!");
+          }
+          
+          // Re-trigger check API to refresh alerts immediately
+          const warningBanner = document.querySelector(".alert-warning");
+          if (warningBanner && window.ApiClient.isConfigured()) {
+            warningBanner.remove();
+          }
+        }
+      });
+      
+      // Reset defaults
+      resetBtn.addEventListener("click", () => {
+        if (window.ApiClient) {
+          window.ApiClient.setBaseUrl(null);
+          input.value = window.ApiClient.getBaseUrl();
+          if (typeof window.showToast === 'function') {
+            window.showToast("API Endpoint reset to default placeholder.", "info");
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

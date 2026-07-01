@@ -1,0 +1,220 @@
+/* dashboard.css - Specific styling for Dashboard and Charts */
+
+/* Stats cards styling */
+.stat-card {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: rgba(var(--primary-rgb), 0.05);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] .stat-card-icon {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stat-card:hover .stat-card-icon {
+  background: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.stat-card-info h6 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card-info h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Custom indicator badges */
+.trend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.trend-up {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.trend-down {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* Charts Containers */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  padding: 0.5rem;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chart-header h5 {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* Balance Hero Card */
+.balance-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.balance-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.balance-hero .card-title {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.balance-hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.balance-hero-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+/* Quick Actions grid */
+.quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1rem;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.quick-action-btn i {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.quick-action-btn:hover {
+  background: var(--secondary-color);
+  color: #fff;
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.quick-action-btn:hover i {
+  color: #fff;
+}
+
+/* Tables visual redesign */
+.custom-table {
+  width: 100%;
+  margin-bottom: 0;
+  color: var(--text-primary);
+}
+
+.custom-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  background-color: transparent !important;
+  border-bottom: 2px solid var(--border-color);
+  padding: 1rem 0.75rem;
+}
+
+.custom-table td {
+  padding: 1rem 0.75rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+  background-color: transparent !important;
+}
+
+.custom-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background-color: rgba(var(--primary-rgb), 0.02) !important;
+}
+
+[data-bs-theme="dark"] .custom-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.badge-deposit {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+}
+
+.badge-withdrawal {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.badge-transfer {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  color: #3b82f6 !important;
+}
